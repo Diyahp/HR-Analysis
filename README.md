@@ -1,5 +1,6 @@
 **HR Analysis with Power bi**
 This repository contains the code and resources used for an HR Analysis project completed using Power Bi
+
    **Project Overview**
 **Problems HR Data aimed to solve:**
 1.	Utilise ‘Dashboard Data’ to develop a dashboard for the HR director and SMT which presents a summary of how Dover Insurance is performing against key metrics.
