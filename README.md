@@ -13,7 +13,8 @@ d.	Usage of the wellness app.
   **Types of data used** 
 i.dashboard data
 ii.Regression data.
-  Technologies Used:
+
+  **Technologies Used**:
 i.Power bi
 ii.excel
 iii.Powerpoint
