@@ -1,0 +1,2623 @@
+{
+  "compatibilityLevel": 1567,
+  "model": {
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"Dashboard Data\",\"Regression\"]"
+      },
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "1"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.128.1177.0 (24.04)"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ],
+    "culture": "en-GB",
+    "cultures": [
+      {
+        "name": "en-GB",
+        "linguisticMetadata": {
+          "content": {
+            "Language": "en-US",
+            "Version": "1.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-GB",
+    "tables": [
+      {
+        "name": "DateTableTemplate_013c1100-1752-41a6-a317-036cb598a142",
+        "annotations": [
+          {
+            "name": "__PBI_TemplateDateTable",
+            "value": "true"
+          },
+          {
+            "name": "DefaultItem",
+            "value": "DateHierarchy"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "1fcf5ab4-151b-46ba-945c-716e818c7a17",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Year"
+              }
+            ],
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "expression": "YEAR([Date])",
+            "isHidden": true,
+            "lineageTag": "7ebd246e-6d2a-4106-a4c3-8e9e56e5c7a3",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "MonthNumber"
+              }
+            ],
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "expression": "MONTH([Date])",
+            "isHidden": true,
+            "lineageTag": "4aff3a13-0e38-4fc5-b85c-b7cc268f2508",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Month"
+              }
+            ],
+            "dataCategory": "Months",
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMMM\")",
+            "isHidden": true,
+            "lineageTag": "760917dd-7f5e-4c8a-b6e4-057481d63894",
+            "sortByColumn": "MonthNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "QuarterNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "QuarterNumber"
+              }
+            ],
+            "dataCategory": "QuarterOfYear",
+            "dataType": "int64",
+            "expression": "INT(([MonthNo] + 2) / 3)",
+            "isHidden": true,
+            "lineageTag": "c7462def-a304-40fb-8285-e7dde2bceb78",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Quarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Quarter"
+              }
+            ],
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "expression": "\"Qtr \" & [QuarterNo]",
+            "isHidden": true,
+            "lineageTag": "f2b9b8b6-5688-43ba-9b8d-e39a13ad4fd6",
+            "sortByColumn": "QuarterNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Day",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Day"
+              }
+            ],
+            "dataCategory": "DayOfMonth",
+            "dataType": "int64",
+            "expression": "DAY([Date])",
+            "isHidden": true,
+            "lineageTag": "7ab75a7a-bafe-4d5e-a831-a7efc8823f5c",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Date Hierarchy",
+            "annotations": [
+              {
+                "name": "TemplateId",
+                "value": "DateHierarchy"
+              }
+            ],
+            "levels": [
+              {
+                "name": "Year",
+                "column": "Year",
+                "lineageTag": "85ad1be4-75f9-4fbc-8b68-9d267abbdd98",
+                "ordinal": 0
+              },
+              {
+                "name": "Quarter",
+                "column": "Quarter",
+                "lineageTag": "37da952a-fd27-4224-8029-71513283230d",
+                "ordinal": 1
+              },
+              {
+                "name": "Month",
+                "column": "Month",
+                "lineageTag": "e852025b-32a8-4a54-a069-1b17b02e7a90",
+                "ordinal": 2
+              },
+              {
+                "name": "Day",
+                "column": "Day",
+                "lineageTag": "9e6be598-671c-4db8-adce-8cb6a20bfa3b",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "8694bb06-48b2-45bb-a375-dce2d9f331bc"
+          }
+        ],
+        "isHidden": true,
+        "isPrivate": true,
+        "lineageTag": "83c81ad4-57fe-4a4a-9419-9108335f0d30",
+        "partitions": [
+          {
+            "name": "DateTableTemplate_013c1100-1752-41a6-a317-036cb598a142",
+            "mode": "import",
+            "source": {
+              "expression": "Calendar(Date(2015,1,1), Date(2015,1,1))",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Dashboard Data",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "EmpID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "71e7226e-39d9-41db-b3b6-52b4b61832e9",
+            "sourceColumn": "EmpID",
+            "summarizeBy": "count"
+          },
+          {
+            "name": "Position",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "87447fcb-ece1-4450-aee9-2668fd16f7bd",
+            "sourceColumn": "Position",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Division",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b02ce977-02f7-4ddd-976f-8e52931496a0",
+            "sourceColumn": "Division",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Gender",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b8777b7a-f969-421f-8151-8b18f4f3f6ff",
+            "sourceColumn": "Gender",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Ethnicity",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "7082d12e-e357-410f-a47e-f9b495ae255c",
+            "sourceColumn": "Ethnicity",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Age Group",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "9c6a5890-2f23-4eeb-a9d1-8fe42478cd48",
+            "sourceColumn": "Age Group",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Contract",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ce6d87bb-7076-4c5d-bd38-ba8cb51a29a0",
+            "sourceColumn": "Contract",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Days Absence FTE (last 12 months)",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "__PBI_SemanticLinks",
+                "value": "[{\"LinkTarget\":{\"TableName\":\"Dashboard Data\",\"TableItemName\":\"Days Absence FTE (last 12 months) (bins)\",\"ObjectType\":4},\"LinkType\":\"UsedInGroup\"}]"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "b6993ad2-7e47-4ca6-8ca2-34aa2fa169cd",
+            "sourceColumn": "Days Absence FTE (last 12 months)",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "% of time viewing non-work content online",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "__PBI_SemanticLinks",
+                "value": "[{\"LinkTarget\":{\"TableName\":\"Dashboard Data\",\"TableItemName\":\"% of time viewing non-work content online (groups)\",\"ObjectType\":4},\"LinkType\":\"UsedInGroup\"}]"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "dbbb6eb1-bdda-47bb-8417-2938c5cebcb4",
+            "sourceColumn": "% of time viewing non-work content online",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Hours on wellness app 2022",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "__PBI_SemanticLinks",
+                "value": "[{\"LinkTarget\":{\"TableName\":\"Dashboard Data\",\"TableItemName\":\"Hours on wellness app 2022 (bins)\",\"ObjectType\":4},\"LinkType\":\"UsedInGroup\"}]"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "541dc846-4986-4b8a-bdb0-4f0cd81c4f98",
+            "sourceColumn": "Hours on wellness app 2022",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Employees have a 'voice' in this Organisation (0-10)",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "f468c873-fd7d-4da1-8810-6e1a6819a418",
+            "sourceColumn": "Employees have a 'voice' in this Organisation (0-10)",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "My pay and benefits are fair for the work I do",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "c76c4a34-f1af-4812-b408-ea8fa2600832",
+            "sourceColumn": "My pay and benefits are fair for the work I do",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Everybody has an equal opportunity to progress in this organisation (0-10)",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "f9378fdf-a496-4f44-99c5-e966c58d7ba5",
+            "sourceColumn": "Everybody has an equal opportunity to progress in this organisation (0-10)",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "My work is stressful and pressurised (0-10)",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "3a6de31b-42e5-449b-9a4f-ea63a997ef41",
+            "sourceColumn": "My work is stressful and pressurised (0-10)",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "My line manager cares about me as a person (0-10)",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "965fa70e-175f-4146-aeea-e117553edf2e",
+            "sourceColumn": "My line manager cares about me as a person (0-10)",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "The purpose of the organisation makes my job feel important (0-10)",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "88bfaead-fac9-4d0c-b7d4-7b208c92a3ea",
+            "sourceColumn": "The purpose of the organisation makes my job feel important (0-10)",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Say Satisfaction",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "993f3ba6-49ed-458d-844a-c5c9cbd620ec",
+            "sourceColumn": "Say Satisfaction",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Benefit Satisfaction",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "427dd681-22ec-4794-a6d5-1a0a0340990a",
+            "sourceColumn": "Benefit Satisfaction",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Progress Satisfaction",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "74cc6d06-f0cb-40ff-9cae-f943af387924",
+            "sourceColumn": "Progress Satisfaction",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Stress and Pressure Satisfaction",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "09850e23-4937-4110-a0b3-fcdcc9cd75b6",
+            "sourceColumn": "Stress and Pressure Satisfaction",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Manager Care Satisfaction",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "1fa3ad0a-3887-4c7b-b11c-f448deff3cac",
+            "sourceColumn": "Manager Care Satisfaction",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Job Importance Satisfaction",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "5fa00056-67c1-4055-a03d-2c57e94510f0",
+            "sourceColumn": "Job Importance Satisfaction",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Rate of Absence",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "__PBI_SemanticLinks",
+                "value": "[{\"LinkTarget\":{\"TableName\":\"Dashboard Data\",\"TableItemName\":\"Rate of Absence (groups)\",\"ObjectType\":4},\"LinkType\":\"UsedInGroup\"}]"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a3c026c6-b749-4bbd-841a-5b0e6efbc0ac",
+            "sourceColumn": "Rate of Absence",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Hours on wellness app 2022 (bins)",
+            "annotations": [
+              {
+                "name": "GroupingDesignState",
+                "value": "{\"Version\":0,\"Sources\":[{\"Name\":\"d\",\"Entity\":\"Dashboard Data\"}],\"GroupedColumns\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Hours on wellness app 2022\"}}],\"BinItem\":{\"Expression\":{\"Floor\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Hours on wellness app 2022\"}},\"Size\":10.0}}}}"
+              },
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "expression": [
+              "IF(",
+              "\tISBLANK('Dashboard Data'[Hours on wellness app 2022]),",
+              "\tBLANK(),",
+              "\tINT('Dashboard Data'[Hours on wellness app 2022] / 10.0) * 10.0",
+              ")"
+            ],
+            "extendedProperties": [
+              {
+                "name": "GroupingMetadata",
+                "type": "json",
+                "value": {
+                  "binningMetadata": {
+                    "binSize": {
+                      "unit": 0,
+                      "value": 10.0
+                    }
+                  },
+                  "groupedColumns": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Dashboard Data"
+                          }
+                        },
+                        "Property": "Hours on wellness app 2022"
+                      }
+                    }
+                  ],
+                  "version": 0
+                }
+              }
+            ],
+            "formatString": "0",
+            "lineageTag": "76fee4aa-0b99-467f-ade6-4652fb7eee5e",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Days Absence FTE (last 12 months) (bins)",
+            "annotations": [
+              {
+                "name": "GroupingDesignState",
+                "value": "{\"Version\":0,\"Sources\":[{\"Name\":\"d\",\"Entity\":\"Dashboard Data\"}],\"GroupedColumns\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Days Absence FTE (last 12 months)\"}}],\"BinItem\":{\"Expression\":{\"Floor\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Days Absence FTE (last 12 months)\"}},\"Size\":20.0}}}}"
+              },
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "expression": [
+              "IF(",
+              "\tISBLANK('Dashboard Data'[Days Absence FTE (last 12 months)]),",
+              "\tBLANK(),",
+              "\tINT('Dashboard Data'[Days Absence FTE (last 12 months)] / 20.0) * 20.0",
+              ")"
+            ],
+            "extendedProperties": [
+              {
+                "name": "GroupingMetadata",
+                "type": "json",
+                "value": {
+                  "binningMetadata": {
+                    "binSize": {
+                      "unit": 0,
+                      "value": 20.0
+                    }
+                  },
+                  "groupedColumns": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Dashboard Data"
+                          }
+                        },
+                        "Property": "Days Absence FTE (last 12 months)"
+                      }
+                    }
+                  ],
+                  "version": 0
+                }
+              }
+            ],
+            "formatString": "0",
+            "lineageTag": "70d62c53-dde8-47c5-8328-48c69af5d871",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "% of time viewing non-work content online (groups)",
+            "annotations": [
+              {
+                "name": "GroupingDesignState",
+                "value": "{\"Version\":0,\"Sources\":[{\"Name\":\"d\",\"Entity\":\"Dashboard Data\"}],\"GroupedColumns\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"% of time viewing non-work content online\"}}],\"GroupItems\":[{\"DisplayName\":\"(Blank)\",\"BlankDefaultPlaceholder\":true},{\"DisplayName\":\"0\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"% of time viewing non-work content online\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"0L\"}}]]}}},{\"DisplayName\":\"A (1-4)\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"% of time viewing non-work content online\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"2L\"}}],[{\"Literal\":{\"Value\":\"3L\"}}],[{\"Literal\":{\"Value\":\"4L\"}}]]}}},{\"DisplayName\":\"B (5-8)\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"% of time viewing non-work content online\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"5L\"}}],[{\"Literal\":{\"Value\":\"6L\"}}],[{\"Literal\":{\"Value\":\"7L\"}}],[{\"Literal\":{\"Value\":\"8L\"}}]]}}},{\"DisplayName\":\"C (9-12)\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"% of time viewing non-work content online\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"9L\"}}],[{\"Literal\":{\"Value\":\"10L\"}}],[{\"Literal\":{\"Value\":\"11L\"}}],[{\"Literal\":{\"Value\":\"12L\"}}]]}}},{\"DisplayName\":\"D (13-16)\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"% of time viewing non-work content online\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"13L\"}}],[{\"Literal\":{\"Value\":\"14L\"}}],[{\"Literal\":{\"Value\":\"15L\"}}],[{\"Literal\":{\"Value\":\"16L\"}}]]}}},{\"DisplayName\":\"Other\"}]}"
+              },
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": [
+              "SWITCH(",
+              "\tTRUE,",
+              "\tISBLANK('Dashboard Data'[% of time viewing non-work content online]),",
+              "\t\"(Blank)\",",
+              "\t'Dashboard Data'[% of time viewing non-work content online] IN {0},",
+              "\t\"0\",",
+              "\t'Dashboard Data'[% of time viewing non-work content online] IN {2,",
+              "\t\t3,",
+              "\t\t4},",
+              "\t\"A (1-4)\",",
+              "\t'Dashboard Data'[% of time viewing non-work content online] IN {5,",
+              "\t\t6,",
+              "\t\t7,",
+              "\t\t8},",
+              "\t\"B (5-8)\",",
+              "\t'Dashboard Data'[% of time viewing non-work content online] IN {9,",
+              "\t\t10,",
+              "\t\t11,",
+              "\t\t12},",
+              "\t\"C (9-12)\",",
+              "\t'Dashboard Data'[% of time viewing non-work content online] IN {13,",
+              "\t\t14,",
+              "\t\t15,",
+              "\t\t16},",
+              "\t\"D (13-16)\",",
+              "\t\"Other\"",
+              ")"
+            ],
+            "extendedProperties": [
+              {
+                "name": "GroupingMetadata",
+                "type": "json",
+                "value": {
+                  "groupedColumns": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Dashboard Data"
+                          }
+                        },
+                        "Property": "% of time viewing non-work content online"
+                      }
+                    }
+                  ],
+                  "version": 0
+                }
+              }
+            ],
+            "isDataTypeInferred": true,
+            "lineageTag": "e015e029-77ab-4766-b38c-5e3f9a9ee4e5",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Rate of Absence (groups)",
+            "annotations": [
+              {
+                "name": "GroupingDesignState",
+                "value": "{\"Version\":0,\"Sources\":[{\"Name\":\"d\",\"Entity\":\"Dashboard Data\"}],\"GroupedColumns\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Rate of Absence\"}}],\"GroupItems\":[{\"DisplayName\":\"(Blank)\",\"BlankDefaultPlaceholder\":true},{\"DisplayName\":\"0-4\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Rate of Absence\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'0'\"}}],[{\"Literal\":{\"Value\":\"'0.4'\"}}],[{\"Literal\":{\"Value\":\"'0.8'\"}}],[{\"Literal\":{\"Value\":\"'1.2'\"}}],[{\"Literal\":{\"Value\":\"'1.6'\"}}],[{\"Literal\":{\"Value\":\"'2'\"}}],[{\"Literal\":{\"Value\":\"'2.4'\"}}],[{\"Literal\":{\"Value\":\"'2.8'\"}}],[{\"Literal\":{\"Value\":\"'3.2'\"}}],[{\"Literal\":{\"Value\":\"'3.6'\"}}],[{\"Literal\":{\"Value\":\"'4'\"}}]]}}},{\"DisplayName\":\"12.1-16.0\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Rate of Absence\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'14'\"}}],[{\"Literal\":{\"Value\":\"'16'\"}}]]}}},{\"DisplayName\":\"18\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Rate of Absence\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'18'\"}}]]}}},{\"DisplayName\":\"22\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Rate of Absence\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'22'\"}}]]}}},{\"DisplayName\":\"25-36\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Rate of Absence\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'36'\"}}]]}}},{\"DisplayName\":\"37-48\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Rate of Absence\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'44'\"}}],[{\"Literal\":{\"Value\":\"'48'\"}}]]}}},{\"DisplayName\":\"4.1-8.0\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Rate of Absence\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'4.8'\"}}],[{\"Literal\":{\"Value\":\"'5.2'\"}}],[{\"Literal\":{\"Value\":\"'5.6'\"}}],[{\"Literal\":{\"Value\":\"'6'\"}}],[{\"Literal\":{\"Value\":\"'8'\"}}]]}}},{\"DisplayName\":\"72\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Rate of Absence\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'72'\"}}]]}}},{\"DisplayName\":\"8.1-12.0\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Rate of Absence\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'12'\"}}],[{\"Literal\":{\"Value\":\"'8.8'\"}}]]}}}]}"
+              },
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": [
+              "SWITCH(",
+              "\tTRUE,",
+              "\tISBLANK('Dashboard Data'[Rate of Absence]),",
+              "\t\"(Blank)\",",
+              "\t'Dashboard Data'[Rate of Absence] IN {\"0\",",
+              "\t\t\"0.4\",",
+              "\t\t\"0.8\",",
+              "\t\t\"1.2\",",
+              "\t\t\"1.6\",",
+              "\t\t\"2\",",
+              "\t\t\"2.4\",",
+              "\t\t\"2.8\",",
+              "\t\t\"3.2\",",
+              "\t\t\"3.6\",",
+              "\t\t\"4\"},",
+              "\t\"0-4\",",
+              "\t'Dashboard Data'[Rate of Absence] IN {\"14\",",
+              "\t\t\"16\"},",
+              "\t\"12.1-16.0\",",
+              "\t'Dashboard Data'[Rate of Absence] IN {\"18\"},",
+              "\t\"18\",",
+              "\t'Dashboard Data'[Rate of Absence] IN {\"22\"},",
+              "\t\"22\",",
+              "\t'Dashboard Data'[Rate of Absence] IN {\"36\"},",
+              "\t\"25-36\",",
+              "\t'Dashboard Data'[Rate of Absence] IN {\"44\",",
+              "\t\t\"48\"},",
+              "\t\"37-48\",",
+              "\t'Dashboard Data'[Rate of Absence] IN {\"4.8\",",
+              "\t\t\"5.2\",",
+              "\t\t\"5.6\",",
+              "\t\t\"6\",",
+              "\t\t\"8\"},",
+              "\t\"4.1-8.0\",",
+              "\t'Dashboard Data'[Rate of Absence] IN {\"72\"},",
+              "\t\"72\",",
+              "\t'Dashboard Data'[Rate of Absence] IN {\"12\",",
+              "\t\t\"8.8\"},",
+              "\t\"8.1-12.0\",",
+              "\t'Dashboard Data'[Rate of Absence]",
+              ")"
+            ],
+            "extendedProperties": [
+              {
+                "name": "GroupingMetadata",
+                "type": "json",
+                "value": {
+                  "groupedColumns": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Dashboard Data"
+                          }
+                        },
+                        "Property": "Rate of Absence"
+                      }
+                    }
+                  ],
+                  "version": 0
+                }
+              }
+            ],
+            "isDataTypeInferred": true,
+            "lineageTag": "1aa3a4ea-964d-4fac-b593-c970876cdbe1",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "lineageTag": "aa6e5f53-aeeb-465f-bf03-0844a2d0df3f",
+        "measures": [
+          {
+            "name": "Headcount",
+            "expression": "COUNTROWS('Dashboard Data')",
+            "formatString": "0",
+            "lineageTag": "3b47dc65-bb6a-417e-af18-c0ef3c18de3c"
+          },
+          {
+            "name": "TotalWorkday",
+            "expression": "250",
+            "formatString": "0",
+            "lineageTag": "96d2e950-f905-4b47-8069-27726ab884ee"
+          },
+          {
+            "name": "Absenteeism Rate",
+            "expression": [
+              "",
+              "VAR TotalAbsenceDays = ",
+              "    SUM('Dashboard Data'[Days Absence FTE (last 12 months)])",
+              "VAR TotalScheduledDays = ",
+              "    'Dashboard Data'[TotalWorkday] * 'Dashboard Data'[Headcount]",
+              "VAR ARate = ",
+              "    DIVIDE(TotalAbsenceDays, TotalScheduledDays, 0)",
+              "RETURN",
+              "    ARate"
+            ],
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "61f17da5-f293-4c74-bb90-8edced461a24"
+          },
+          {
+            "name": "%of_SaySatisfied",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "VAR NewMeas_Say_Satisfied = CALCULATE(COUNT('Dashboard Data'[Say Satisfaction]),'Dashboard Data'[Say Satisfaction]=\"Satisfied\")",
+              "RETURN",
+              "(NewMeas_Say_Satisfied / 'Dashboard Data'[Headcount]) * 100"
+            ],
+            "lineageTag": "1b7c37e8-39f7-466d-8bea-6657905893cd"
+          },
+          {
+            "name": "%of_BSatisfied",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "VAR NewMeas_B_Satisfied = CALCULATE(COUNT('Dashboard Data'[Benefit Satisfaction]),'Dashboard Data'[Benefit Satisfaction]=\"Satisfied\")",
+              "RETURN",
+              "(NewMeas_B_Satisfied / 'Dashboard Data'[Headcount]) * 100"
+            ],
+            "lineageTag": "c963f6ae-dbfb-4141-9845-f34f8989bfa1"
+          },
+          {
+            "name": "%of_PSatisfied",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "VAR NewMeas_P_Satisfied = CALCULATE(COUNT('Dashboard Data'[Progress Satisfaction]),'Dashboard Data'[Progress Satisfaction]=\"Satisfied\")",
+              "RETURN",
+              "(NewMeas_P_Satisfied / 'Dashboard Data'[Headcount]) * 100"
+            ],
+            "lineageTag": "522e5024-8dc2-4b73-aef6-d69101629329"
+          },
+          {
+            "name": "%of_SPSatisfied",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "VAR NewMeas_SP_Satisfied = CALCULATE(COUNT('Dashboard Data'[Stress and Pressure Satisfaction]),'Dashboard Data'[Stress and Pressure Satisfaction]=\"Satisfied\")",
+              "RETURN",
+              "(NewMeas_SP_Satisfied / 'Dashboard Data'[Headcount]) * 100"
+            ],
+            "lineageTag": "3d1119ab-fb8e-45c7-b913-35826de2f7b4"
+          },
+          {
+            "name": "%of_MCSatisfied",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "VAR NewMeas_MC_Satisfied = CALCULATE(COUNT('Dashboard Data'[Manager Care Satisfaction]),'Dashboard Data'[Manager Care Satisfaction]=\"Satisfied\")",
+              "RETURN",
+              "(NewMeas_MC_Satisfied / 'Dashboard Data'[Headcount]) * 100"
+            ],
+            "lineageTag": "693565b8-99dc-4a67-b08e-d6be86fb0ee8"
+          },
+          {
+            "name": "%of_JISatisfied",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "VAR NewMeas_JI_Satisfied = CALCULATE(COUNT('Dashboard Data'[Job Importance Satisfaction]),'Dashboard Data'[Job Importance Satisfaction]=\"Satisfied\")",
+              "RETURN",
+              "(NewMeas_JI_Satisfied / 'Dashboard Data'[Headcount]) * 100"
+            ],
+            "lineageTag": "8f173f3b-ebc4-4be8-a138-ecb0bf194e0e"
+          },
+          {
+            "name": "Overall Satisfaction",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "VAR m1 = 'Dashboard Data'[%of_SaySatisfied]",
+              "VAR m2 = 'Dashboard Data'[%of_BSatisfied]",
+              "VAR m3 = 'Dashboard Data'[%of_PSatisfied]",
+              "VAR m4 = 'Dashboard Data'[%of_SPSatisfied]",
+              "VAR m5 = 'Dashboard Data'[%of_MCSatisfied]",
+              "VAR m6 = 'Dashboard Data'[%of_JISatisfied]",
+              "RETURN ((m1 + m2 + m3 + m4 + m5 + m6) / 550 ) * 100"
+            ],
+            "lineageTag": "625858d9-36f0-4259-82a4-e3bb877a7c39"
+          },
+          {
+            "name": "Presence_Rate",
+            "expression": [
+              "",
+              "VAR TotalAbsenceDays = ",
+              "  SUM('Dashboard Data'[Days Absence FTE (last 12 months)])",
+              "VAR TotalScheduledDays = ",
+              "  'Dashboard Data'[TotalWorkday] * 'Dashboard Data'[Headcount]",
+              "VAR PRate = ",
+              "  1 - DIVIDE(TotalAbsenceDays, TotalScheduledDays, 0)",
+              "RETURN",
+              "  PRate"
+            ],
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "430dedfd-bf53-40c9-8c9e-75119f90b398"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Dashboard Data",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(\"C:\\Users\\PGUSER\\OneDrive\\Desktop\\O Project\\HR Result\\Analytics for HR _ Final Assessment Dataset_2223.xlsx\"), null, true),",
+                "    #\"Dashboard Data_Sheet\" = Source{[Item=\"Dashboard Data\",Kind=\"Sheet\"]}[Data],",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(#\"Dashboard Data_Sheet\", [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"EmpID\", Int64.Type}, {\"Position\", type text}, {\"Division\", type text}, {\"Gender\", type text}, {\"Ethnicity\", type text}, {\"Age Group\", type text}, {\"Contract\", type text}, {\"Days Absence FTE (last 12 months)\", Int64.Type}, {\"% of time viewing non-work content online\", Int64.Type}, {\"Hours on wellness app 2022\", Int64.Type}, {\"Employees have a 'voice' in this Organisation (0-10)\", Int64.Type}, {\"My pay and benefits are fair for the work I do\", Int64.Type}, {\"Everybody has an equal opportunity to progress in this organisation (0-10)\", Int64.Type}, {\"My work is stressful and pressurised (0-10)\", Int64.Type}, {\"My line manager cares about me as a person (0-10)\", Int64.Type}, {\"The purpose of the organisation makes my job feel important (0-10)\", Int64.Type}}),",
+                "    #\"Filtered Rows\" = Table.SelectRows(#\"Changed Type\", each ([Division] <> null and [Division] <> \"\")),",
+                "    SaySatis = Table.AddColumn(#\"Filtered Rows\", \"Say Satisfaction\", each if [#\"Employees have a 'voice' in this Organisation (0-10)\"] >= 7 then \"Satisfied\" else if [#\"Employees have a 'voice' in this Organisation (0-10)\"] < 7 then \"Not Satisfied\" else null),",
+                "    BSatis = Table.AddColumn(SaySatis, \"Benefit Satisfaction\", each if [My pay and benefits are fair for the work I do] >= 7 then \"Satisfied\" else if [My pay and benefits are fair for the work I do] < 7 then \"Not Satisfied\" else null),",
+                "    PSatis = Table.AddColumn(BSatis, \"Progress Satisfaction\", each if [#\"Everybody has an equal opportunity to progress in this organisation (0-10)\"] >= 7 then \"Satisfied\" else if [#\"Everybody has an equal opportunity to progress in this organisation (0-10)\"] < 7 then \"Not Satisfied\" else null),",
+                "    SPSatis = Table.AddColumn(PSatis, \"Stress and Pressure Satisfaction\", each if [#\"My work is stressful and pressurised (0-10)\"] > 5 then \"Not Satisfied\" else if [#\"My work is stressful and pressurised (0-10)\"] <= 5 then \"Satisfied\" else null),",
+                "    MCSatis = Table.AddColumn(SPSatis, \"Manager Care Satisfaction\", each if [#\"My line manager cares about me as a person (0-10)\"] >= 7 then \"Satisfied\" else if [#\"My line manager cares about me as a person (0-10)\"] < 7 then \"Not Satisfied\" else null),",
+                "    JISatis = Table.AddColumn(MCSatis, \"Job Importance Satisfaction\", each if [#\"The purpose of the organisation makes my job feel important (0-10)\"] >= 7 then \"Satisfied\" else if [#\"The purpose of the organisation makes my job feel important (0-10)\"] < 7 then \"Not Satisfied\" else null),",
+                "    #\"Added Custom\" = Table.AddColumn(JISatis, \"Rate of Absence\", each ([#\"Days Absence FTE (last 12 months)\"]/250) * 100),",
+                "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Added Custom\",{\"EmpID\", \"Position\", \"Division\", \"Gender\", \"Ethnicity\", \"Age Group\", \"Contract\", \"Days Absence FTE (last 12 months)\", \"Rate of Absence\", \"% of time viewing non-work content online\", \"Hours on wellness app 2022\", \"Employees have a 'voice' in this Organisation (0-10)\", \"My pay and benefits are fair for the work I do\", \"Everybody has an equal opportunity to progress in this organisation (0-10)\", \"My work is stressful and pressurised (0-10)\", \"My line manager cares about me as a person (0-10)\", \"The purpose of the organisation makes my job feel important (0-10)\", \"Say Satisfaction\", \"Benefit Satisfaction\", \"Progress Satisfaction\", \"Stress and Pressure Satisfaction\", \"Manager Care Satisfaction\", \"Job Importance Satisfaction\"})",
+                "in",
+                "    #\"Reordered Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Regression",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Overall_Wellbeing",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "315e1d9f-8b12-4c90-aba8-0ffcd01a83a0",
+            "sourceColumn": "Overall_Wellbeing",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Stressful_Work",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "5ff39163-7e91-4a48-854f-4b5f0b2c3247",
+            "sourceColumn": "Stressful_Work",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Manager_Relationship",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "54229ad7-3f30-48a0-94cb-097cf1080741",
+            "sourceColumn": "Manager_Relationship",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Negative_Feelings",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "27e3c238-139f-478c-b899-eeeed103938d",
+            "sourceColumn": "Negative_Feelings",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Good_Friends",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "90c75330-4b42-40a6-9622-52c4783b8971",
+            "sourceColumn": "Good_Friends",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "CPD_opportunities",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "e5ae6fe2-67f9-4f0d-bec8-5c913e5be36c",
+            "sourceColumn": "CPD_opportunities",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "d61fc252-2505-4236-b902-6d7b3964a741",
+        "partitions": [
+          {
+            "name": "Regression",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(\"C:\\Users\\PGUSER\\OneDrive\\Desktop\\O Project\\HR Result\\Analytics for HR _ Final Assessment Dataset_2223.xlsx\"), null, true),",
+                "    Regression_Sheet = Source{[Item=\"Regression\",Kind=\"Sheet\"]}[Data],",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Regression_Sheet, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"On a scale (0 - 100) how do you rate your overall wellbeing?\", Int64.Type}, {\"My work is stressful and pressurised (0-100)\", Int64.Type}, {\"I have a good working relationship with my manager (0 to 100)\", Int64.Type}, {\"I regularly have strong negative feelings at work (0 to 100) \", Int64.Type}, {\"I have good friends at work (0 to 100)\", Int64.Type}, {\"There are ample opportunities for CPD at work (0 to 100) \", Int64.Type}}),",
+                "    #\"Filtered Rows\" = Table.SelectRows(#\"Changed Type\", each [#\"On a scale (0 - 100) how do you rate your overall wellbeing?\"] <> null and [#\"On a scale (0 - 100) how do you rate your overall wellbeing?\"] <> \"\"),",
+                "    #\"Filtered Rows1\" = Table.SelectRows(#\"Filtered Rows\", each [#\"My work is stressful and pressurised (0-100)\"] <> null and [#\"My work is stressful and pressurised (0-100)\"] <> \"\"),",
+                "    #\"Filtered Rows2\" = Table.SelectRows(#\"Filtered Rows1\", each [#\"I have a good working relationship with my manager (0 to 100)\"] <> null and [#\"I have a good working relationship with my manager (0 to 100)\"] <> \"\"),",
+                "    #\"Filtered Rows3\" = Table.SelectRows(#\"Filtered Rows2\", each [#\"I regularly have strong negative feelings at work (0 to 100) \"] <> null and [#\"I regularly have strong negative feelings at work (0 to 100) \"] <> \"\"),",
+                "    #\"Filtered Rows4\" = Table.SelectRows(#\"Filtered Rows3\", each [#\"I have good friends at work (0 to 100)\"] <> null and [#\"I have good friends at work (0 to 100)\"] <> \"\"),",
+                "    #\"Filtered Rows5\" = Table.SelectRows(#\"Filtered Rows4\", each [#\"There are ample opportunities for CPD at work (0 to 100) \"] <> null and [#\"There are ample opportunities for CPD at work (0 to 100) \"] <> \"\"),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Filtered Rows5\",{{\"On a scale (0 - 100) how do you rate your overall wellbeing?\", \"Overall_Wellbeing\"}, {\"My work is stressful and pressurised (0-100)\", \"Stressful_Work\"}, {\"I regularly have strong negative feelings at work (0 to 100) \", \"Negative_Feelings\"}, {\"I have a good working relationship with my manager (0 to 100)\", \"Manager_Relationship\"}, {\"I have good friends at work (0 to 100)\", \"Good_Friends\"}, {\"There are ample opportunities for CPD at work (0 to 100) \", \"CPD_opportunities\"}})",
+                "in",
+                "    #\"Renamed Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "R.managerRelationship",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "adaef7928c2448d3b848ca010b761615"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Slope1",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "a5de15af-579f-4581-9dab-a607e09c6e8c",
+            "sourceColumn": "[Slope1]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Intercept",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "99305309-993e-46c1-9b63-11138dafdbce",
+            "sourceColumn": "[Intercept]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "StandardErrorSlope1",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "c7dfac55-780f-43a1-9f2c-0900e71988fc",
+            "sourceColumn": "[StandardErrorSlope1]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "StandardErrorIntercept",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "5f922b54-b298-4a7a-8fb0-5245f0739892",
+            "sourceColumn": "[StandardErrorIntercept]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "CoefficientOfDetermination",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "6e9e807c-ae64-4a79-bddc-0234020312ac",
+            "sourceColumn": "[CoefficientOfDetermination]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "StandardError",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "fe5469b1-71fc-4ed5-99ab-f1b40b188ae5",
+            "sourceColumn": "[StandardError]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "FStatistic",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "0f921cda-a778-4117-81ae-86cd5fe813ba",
+            "sourceColumn": "[FStatistic]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "DegreesOfFreedom",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "aa2c1eaa-1ec7-4962-a37a-53fde392ad7f",
+            "sourceColumn": "[DegreesOfFreedom]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "RegressionSumOfSquares",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "2f166583-0ec3-4063-bf73-be145e5f87b6",
+            "sourceColumn": "[RegressionSumOfSquares]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "ResidualSumOfSquares",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "1b2f24e8-f8d2-4d34-a556-2290515ce493",
+            "sourceColumn": "[ResidualSumOfSquares]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "8b97b9cc-4543-4df3-95f0-376202037feb",
+        "measures": [
+          {
+            "name": "Predicted Overall_wellbeing_MR",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "SELECTCOLUMNS('R.managerRelationship', [Intercept]) + SELECTCOLUMNS('R.managerRelationship', [Slope1])*'manager_relationship'[manager_relationship Value]",
+            "lineageTag": "71fa3401-a0a8-4645-8012-94d548da9ad1"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "R.managerRelationship",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "LINEST(Regression[Overall_Wellbeing],",
+                "                Regression[Manager_Relationship]",
+                ")"
+              ],
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "R.CPD_opportunities",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "7edb05ee5f5040f5b097383516611266"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Slope1",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "ecb833c8-1015-4dc7-9394-4860cc909f37",
+            "sourceColumn": "[Slope1]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Intercept",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "444c4a7a-570a-4558-8a4f-f4cf5fdc17f8",
+            "sourceColumn": "[Intercept]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "StandardErrorSlope1",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "c20101dd-1e1c-4ffb-bc17-98fd19ae4b8e",
+            "sourceColumn": "[StandardErrorSlope1]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "StandardErrorIntercept",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "11916a60-29e9-402f-beba-d58277c4e1ea",
+            "sourceColumn": "[StandardErrorIntercept]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "CoefficientOfDetermination",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "ff0a699c-7dfe-49a8-a2c6-111b8c9f2305",
+            "sourceColumn": "[CoefficientOfDetermination]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "StandardError",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "6a8c0df2-3f79-4047-b692-7d44b7bc5ed9",
+            "sourceColumn": "[StandardError]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "FStatistic",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "b9a3489b-0dba-4a16-89f3-73db41d067be",
+            "sourceColumn": "[FStatistic]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "DegreesOfFreedom",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "4b439edd-56de-4190-acce-1ee9c0482244",
+            "sourceColumn": "[DegreesOfFreedom]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "RegressionSumOfSquares",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "d05f8883-608a-4f78-a8ec-4d1023decd73",
+            "sourceColumn": "[RegressionSumOfSquares]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "ResidualSumOfSquares",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "bfd3e7be-a2a2-48d9-956e-f5176917a5fb",
+            "sourceColumn": "[ResidualSumOfSquares]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "d789c3a5-4303-4c01-883f-b0f9732ba365",
+        "measures": [
+          {
+            "name": "Predicted Overall_wellbeing_CPD",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "SELECTCOLUMNS('R.CPD_opportunities', [Intercept]) + SELECTCOLUMNS('R.CPD_opportunities', [Slope1])*'CPD_opportunities'[CPD_opportunities Value]",
+            "lineageTag": "f4a0a804-a433-47d6-b073-40f8d24e0d72"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "R.CPD_opportunities",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "LINEST(Regression[Overall_Wellbeing],",
+                "                Regression[CPD_opportunities]",
+                ")"
+              ],
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "R.good_friends",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "dd8fa3d3582f4a389f3bb8075c450bce"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Slope1",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "252548aa-19f2-4b03-83c0-57822afa4e8d",
+            "sourceColumn": "[Slope1]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Intercept",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "441db76b-1ae3-40cd-b45c-8d422f2c7397",
+            "sourceColumn": "[Intercept]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "StandardErrorSlope1",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "2a392123-7947-48ca-b838-ee673e194b80",
+            "sourceColumn": "[StandardErrorSlope1]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "StandardErrorIntercept",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "0f73cf87-8a99-45fb-ab7b-cf9894914523",
+            "sourceColumn": "[StandardErrorIntercept]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "CoefficientOfDetermination",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "127ee8f3-f89a-4bc6-8c5e-bcd7fe25f1e8",
+            "sourceColumn": "[CoefficientOfDetermination]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "StandardError",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "91410b04-399f-4754-9d53-3b580db8e504",
+            "sourceColumn": "[StandardError]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "FStatistic",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "d9780b1a-ca9b-4159-a023-2cd298470b40",
+            "sourceColumn": "[FStatistic]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "DegreesOfFreedom",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "8c1f80fd-4623-49a3-9679-01077401c838",
+            "sourceColumn": "[DegreesOfFreedom]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "RegressionSumOfSquares",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "93358e74-ff06-42b6-b468-0bf63408717b",
+            "sourceColumn": "[RegressionSumOfSquares]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "ResidualSumOfSquares",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "755a5246-cb6a-431e-8dd0-8c6c2627c0e0",
+            "sourceColumn": "[ResidualSumOfSquares]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "12fc6a9d-5226-43d7-a127-f565635b5cc5",
+        "partitions": [
+          {
+            "name": "R.good_friends",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "LINEST(Regression[Overall_Wellbeing],",
+                "                Regression[Good_Friends]",
+                ")"
+              ],
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "R.Negative_feelings",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "3bf565d14d314e34a65ab0d22b19c51c"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Slope1",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "ab3b8752-c2d8-4bf7-b8a6-cdc826597291",
+            "sourceColumn": "[Slope1]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Intercept",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "535146e8-5763-41a1-b9fe-0b5df7d5a301",
+            "sourceColumn": "[Intercept]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "StandardErrorSlope1",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "80746cf0-9d39-4cb5-b7c8-f2cd8abb1f67",
+            "sourceColumn": "[StandardErrorSlope1]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "StandardErrorIntercept",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "1366efff-849b-41ca-95a4-2caeae8a6689",
+            "sourceColumn": "[StandardErrorIntercept]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "CoefficientOfDetermination",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "9d1e645a-3fb8-444c-a1f9-a9084ff56723",
+            "sourceColumn": "[CoefficientOfDetermination]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "StandardError",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "8949180a-ba7a-492f-8f0a-26344215f9a1",
+            "sourceColumn": "[StandardError]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "FStatistic",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "62b781db-6b0a-470e-99b4-e7fa012993d9",
+            "sourceColumn": "[FStatistic]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "DegreesOfFreedom",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "9da14e23-1d76-4564-a75c-fec5a5f9579d",
+            "sourceColumn": "[DegreesOfFreedom]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "RegressionSumOfSquares",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "a400e9fa-dab3-43b0-bb63-b8cd394ac336",
+            "sourceColumn": "[RegressionSumOfSquares]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "ResidualSumOfSquares",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "1de72272-ea3f-48aa-9917-5cd97b99bd28",
+            "sourceColumn": "[ResidualSumOfSquares]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "0086c321-bc79-4bf1-9ff2-f3290595bd58",
+        "measures": [
+          {
+            "name": "Predicted Overall_wellbeing_NF",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "SELECTCOLUMNS('R.Negative_feelings', [Intercept]) + SELECTCOLUMNS('R.Negative_feelings', [Slope1])*'Negative_feelings'[Negative_feelings Value]",
+            "lineageTag": "b9896700-ba63-4c1f-bf99-82e33b0687bf"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "R.Negative_feelings",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "LINEST(Regression[Overall_Wellbeing],",
+                "                Regression[Negative_Feelings]",
+                ")"
+              ],
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "R.stressful_work",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "95860e4cb879437a9b6c13303b9fb38e"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Slope1",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "077378f2-a09c-40a8-8e58-a9051de76e67",
+            "sourceColumn": "[Slope1]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Intercept",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "b03d9646-0e6e-4be6-9463-35e4c25de3da",
+            "sourceColumn": "[Intercept]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "StandardErrorSlope1",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "8bfe5474-749e-452d-9803-07c0fdb2ef97",
+            "sourceColumn": "[StandardErrorSlope1]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "StandardErrorIntercept",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "dfb5e8c1-c178-428e-942b-f10dc8f9c549",
+            "sourceColumn": "[StandardErrorIntercept]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "CoefficientOfDetermination",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "ae562cdf-975b-4f72-b1e6-6b6da868f2ff",
+            "sourceColumn": "[CoefficientOfDetermination]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "StandardError",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "f3ca1ca3-61fc-4bee-9e82-be750d4fe5b8",
+            "sourceColumn": "[StandardError]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "FStatistic",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "dda83936-8be3-47dc-a30d-5113613e7e6b",
+            "sourceColumn": "[FStatistic]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "DegreesOfFreedom",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "627a33aa-88b8-489e-9677-ef5e208ba222",
+            "sourceColumn": "[DegreesOfFreedom]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "RegressionSumOfSquares",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "3b2407ec-f3f9-4290-9334-ca300f2b3166",
+            "sourceColumn": "[RegressionSumOfSquares]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "ResidualSumOfSquares",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "cc12c02a-e92a-4982-85ed-19b4e87e3fe6",
+            "sourceColumn": "[ResidualSumOfSquares]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "5cc57315-d128-44bf-9a50-1bbe7c2a0dbc",
+        "measures": [
+          {
+            "name": "Predicted Overall_wellbeing_SW",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "SELECTCOLUMNS('R.stressful_work', [Intercept]) + SELECTCOLUMNS('R.stressful_work', [Slope1])*'stressful_work'[stressful_work Value]",
+            "lineageTag": "ee8f239e-fd95-4014-b339-f7346484bc94"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "R.stressful_work",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "LINEST(Regression[Overall_Wellbeing],",
+                "                Regression[Stressful_Work]",
+                ")"
+              ],
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "CPD_opportunities",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "2379aace92a44bfca14c693f58c02a31"
+          }
+        ],
+        "columns": [
+          {
+            "name": "CPD_opportunities",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "extendedProperties": [
+              {
+                "name": "ParameterMetadata",
+                "type": "json",
+                "value": {
+                  "version": 0
+                }
+              }
+            ],
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isNameInferred": false,
+            "lineageTag": "b27bd611-2df7-4072-ba86-15d142391f14",
+            "sourceColumn": "[Value]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "ed2295d4-5864-48a4-8c16-369a4dde61d7",
+        "measures": [
+          {
+            "name": "CPD_opportunities Value",
+            "expression": "SELECTEDVALUE('CPD_opportunities'[CPD_opportunities])",
+            "formatString": "0",
+            "lineageTag": "c117f7ac-4081-44d6-abf6-23f0bdc50285"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "CPD_opportunities",
+            "mode": "import",
+            "source": {
+              "expression": "GENERATESERIES(0, 100, 1)",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "good_friends",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "05c8d5042ab44943b780745d7b8eda0c"
+          }
+        ],
+        "columns": [
+          {
+            "name": "good_friends",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "extendedProperties": [
+              {
+                "name": "ParameterMetadata",
+                "type": "json",
+                "value": {
+                  "version": 0
+                }
+              }
+            ],
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isNameInferred": false,
+            "lineageTag": "187c0e82-cdee-4678-a047-f218a7e5805b",
+            "sourceColumn": "[Value]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "15c0ef53-cc14-47a3-91c5-89884bc6d16e",
+        "measures": [
+          {
+            "name": "good_friends Value",
+            "expression": "SELECTEDVALUE('good_friends'[good_friends])",
+            "formatString": "0",
+            "lineageTag": "c83de557-40f9-4563-ad86-8aeab9056f21"
+          },
+          {
+            "name": "Predicted Overall_Wellbeing_GF",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "SELECTCOLUMNS('R.good_friends', [Intercept]) + SELECTCOLUMNS('R.good_friends', [Slope1])*'good_friends'[good_friends Value]",
+            "lineageTag": "1c3ca4a2-2047-4157-8c4e-ad13b3a5642e"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "good_friends",
+            "mode": "import",
+            "source": {
+              "expression": "GENERATESERIES(0, 100, 1)",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "manager_relationship",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "17d554ea53e04a859bdd614d4f524502"
+          }
+        ],
+        "columns": [
+          {
+            "name": "manager_relationship",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "extendedProperties": [
+              {
+                "name": "ParameterMetadata",
+                "type": "json",
+                "value": {
+                  "version": 0
+                }
+              }
+            ],
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isNameInferred": false,
+            "lineageTag": "ffd2428f-fe1e-4331-80d4-698449b2d910",
+            "sourceColumn": "[Value]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "a823d679-31cf-4ad4-a6de-b22d34297a9c",
+        "measures": [
+          {
+            "name": "manager_relationship Value",
+            "expression": "SELECTEDVALUE('manager_relationship'[manager_relationship])",
+            "formatString": "0",
+            "lineageTag": "149e8b34-3a49-4ccc-880c-267d74505ef0"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "manager_relationship",
+            "mode": "import",
+            "source": {
+              "expression": "GENERATESERIES(0, 100, 1)",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Negative_feelings",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "310a60ba04094649a39f907c9840560c"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Negative_feelings",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "extendedProperties": [
+              {
+                "name": "ParameterMetadata",
+                "type": "json",
+                "value": {
+                  "version": 0
+                }
+              }
+            ],
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isNameInferred": false,
+            "lineageTag": "772f9034-fa11-4661-a194-2120044afdae",
+            "sourceColumn": "[Value]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "597c4976-9c02-44b9-a933-d756198bb1a3",
+        "measures": [
+          {
+            "name": "Negative_feelings Value",
+            "expression": "SELECTEDVALUE('Negative_feelings'[Negative_feelings])",
+            "formatString": "0",
+            "lineageTag": "ccb166ab-c6df-4e22-a2e7-a62f2d25189f"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Negative_feelings",
+            "mode": "import",
+            "source": {
+              "expression": "GENERATESERIES(0, 100, 1)",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "stressful_work",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "ae974f5e06264ff0ba8791e66157b976"
+          }
+        ],
+        "columns": [
+          {
+            "name": "stressful_work",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "extendedProperties": [
+              {
+                "name": "ParameterMetadata",
+                "type": "json",
+                "value": {
+                  "version": 0
+                }
+              }
+            ],
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isNameInferred": false,
+            "lineageTag": "52fc0fd6-9b97-4676-bed7-da418006560d",
+            "sourceColumn": "[Value]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "1ddc75bb-ff37-4ad8-9f99-7446c0a93289",
+        "measures": [
+          {
+            "name": "stressful_work Value",
+            "expression": "SELECTEDVALUE('stressful_work'[stressful_work])",
+            "formatString": "0",
+            "lineageTag": "6a96da31-b9b9-4742-850d-5016c812deef"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "stressful_work",
+            "mode": "import",
+            "source": {
+              "expression": "GENERATESERIES(0, 100, 1)",
+              "type": "calculated"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
