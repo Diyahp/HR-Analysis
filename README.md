@@ -15,11 +15,11 @@ d.	Usage of the wellness app.
 <ul>ii.Regression data.</ul>
 
   **Technologies Used**:
-i.Power bi
-ii.excel
-iii.Powerpoint
+<ul>i.Power bi</ul>
+<ul>ii.excel</ul>
+<ul>iii.Powerpoint</ul>
 
   **List of folders**
-i.Analytics for HR _ Final Assessment Dataset_2223-RAW FILE
-ii.HR Analysis(pbix)- power bi file containing the results
-iii.Correlation and regression file-containing result for finding correlation and regression of the regression data and also contains limitation and Reference
+<ul>i.Analytics for HR _ Final Assessment Dataset_2223-RAW FILE</ul>
+<ul>ii.HR Analysis(pbix)- power bi file containing the results</ul>
+<ul>iii.Correlation and regression file-containing result for finding correlation and regression of the regression data and also contains limitation and Reference</ul>
