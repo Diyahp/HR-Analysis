@@ -22,5 +22,5 @@ d.	Usage of the wellness app.
 
   **List of folders**
 <ul>i.Analytics for HR _ Final Assessment Dataset_2223-RAW FILE</ul>
-<ul>ii.HR Analysis(pbix)- power bi file containing the results</ul>
+<ul>ii.HR Analysis(pbix)- power bi report file</ul>
 <ul>iii.Correlation and regression file-containing result for finding correlation and regression of the regression data and also contains limitation and Reference</ul>
