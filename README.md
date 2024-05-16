@@ -18,7 +18,7 @@ i.Power bi
 ii.excel
 iii.Powerpoint
 
-  **list of folders**
+  **List of folders**
 i.Analytics for HR _ Final Assessment Dataset_2223-RAW FILE
 ii.HR Analysis(pbix)- power bi file containing the results
 iii.Correlation and regression file-containing result for finding correlation and regression of the regression data and also contains limitation and References 
