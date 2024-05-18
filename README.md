@@ -10,7 +10,7 @@ b.	The scale and extent of any absence problems at Dover Insurance;
 c.	Any patterns in time spent viewing non-work content online; and
 d.	Usage of the wellness app.
 3.	What 3 specific actions would you advise the HR Director and SMT to prioritise in the next 12-18 months based on your analysis? Justify your proposals.
-4.	
+
 **Also using the Regression’ Data**
 
 1.	Run a correlation analysis to identify potential drivers of ‘overall wellbeing’. 
